@@ -9,13 +9,20 @@ body{
     width: 100%;
 }
 .navbar{
-    background-color: #656565;
+    /* background-color: red; */
     height: 100px;
     width: 100%;
 }
 .slider{
-    background-color: #656565;
+    /* background-color: green; */
     height: 250px;
+    width: 100%;
+}
+.top-bar{
+    height: 350px;
+    background-color: red;
+    background-image: url("images/slider_bg2.jpg");
+    background-size: 100% 100%;
     width: 100%;
 }
 .contact{
@@ -69,6 +76,28 @@ body{
     height: 100px;
     /* background-color: yellow; */
 }
+.menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu ul li{
+    float: right;
+}
+.menu ul li a{
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding: 15px 20px;
+}
+.menu ul li a:hover{
+    /* background-color: red; */
+    color: #fff;
+    border-bottom:3px solid #fff;
+}
+
 .inside-slider{
     width: 450px;
     /* background-color: red; */
@@ -104,6 +133,13 @@ body{
     width: 40px;
     float: left;
 }
+.header-icon a{
+    display: inline-block;
+    padding: 11px;
+    color: #fff;
+}
+
+
 .logo h1{
     color: #fff;
     font-size: 28px;
