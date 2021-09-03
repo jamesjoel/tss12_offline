@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+    margin: 0;
+    pad: 0;
+}
+.header{
+    height: 80px;
+    background-color: blueviolet;
+    width: 100%;
+    margin: o;
+    padding: 0;
+    float: left;
+}
+.content{
+    height: 700px;
+    background-color: grey;
+    width: 100%
+
+}
+
+.footer{
+    height: 130px;
+    background-color: yellow;
+    width: 100%;
+
+}
+
+.wrapper{
+    width: 910px;
+    margin: 0 auto;
