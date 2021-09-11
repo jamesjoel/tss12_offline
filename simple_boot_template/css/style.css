@@ -1,0 +1,38 @@
+.top-header{
+    /* background-color: red; */
+    height: 100px;
+}
+.bg-green1{
+    background-color: #3CC3B5;
+}
+.bg-green2{
+    background-color: #30968a;
+}
+#menu ul li a{
+    color: #FFF;
+    /* font-weight: bold; */
+    font-size: 19px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-right: 1px solid #fff;
+}
+#menu ul li a:hover{
+    background-color: #1c3d39;
+}
+#menu .dropdown .dropdown-item{
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+#menu .dropdown .dropdown-item:hover{
+    color: #fff;
+}
+.text-green{
+    color:  #3CC3B5;
+}
+.btn-green{
+    background-color: #3CC3B5;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
