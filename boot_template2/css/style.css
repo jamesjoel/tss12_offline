@@ -46,7 +46,7 @@
     font-size: 18px;
 }
 #menu ul li a:hover{
-    background-color: #0178B9;
+    background-color: #01adb9;
 }
 .dropdown:hover>.dropdown-menu {
   display: block;
