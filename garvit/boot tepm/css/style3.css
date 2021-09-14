@@ -1,0 +1,15 @@
+h1 span{
+    color: hsl(150, 87%, 47%);
+}
+h1{
+    color: yellowgreen;
+}
+.dropdown .dropdown-menu .dropdown-item{
+    color: rgb(70, 136, 32);
+}
+i{
+    color: teal;
+}
+#jumbotron{
+    color: #000;
+}

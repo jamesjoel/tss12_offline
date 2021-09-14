@@ -1,0 +1,67 @@
+a span{
+    color: rgb(116, 230, 150);
+    font-weight: bold;
+}
+.text-green{
+    color: yellowgreen;
+} 
+.text-red{
+    color: rgb(206, 112, 112);
+}
+.text-jk{
+    color: rgb(19, 236, 110);
+    font-weight: bold;
+    
+}
+.nav-link{
+    font-weight: bold;
+    color: rgb(108, 151, 67);
+}
+#menu ul li a:hover{
+    background-color: #11cee7;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.text-blue{
+    color: rgb(170, 125, 228);
+    font-weight: bold;
+
+}   
+.text-drak{
+    color: darkred;
+    font-weight: bold;
+    text-align: center;
+} 
+.bg-grey{
+    background-color: gray;
+}
+.my-btn{
+    background-color: #8FD6C6;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: rgb(90, 129, 126);
+    display: inline-block;
+    font-weight: bold;
+}
+.my-btn:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.in-btn{
+    background-color: #a9e4ae;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: rgb(68, 70, 83);
+    display: inline-block;
+    font-weight: bold;
+}
+.in-btn:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.text-lp{
+    color: lightsalmon;
+    font-weight: bold;
+    background-color: rgb(232, 236, 235);
+}
