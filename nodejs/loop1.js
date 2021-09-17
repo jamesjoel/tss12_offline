@@ -21,16 +21,23 @@
 //     var y = x-1;
 //     console.log(y);
 // }
-var total = 0;
-for(var a=1; a<=10; a++)
+//  init; comp/cond; inc/dec
+
+// var total = 0;
+// for(var a=1; a<=100; a++)
+// {
+//    total += a;
+// }
+// console.log(total);
+
+
+var a = 10;
+var ans = 1;
+for(var x = a; x>=1; x--)
 {
-    // total += a;
-
+    ans *= x;
 }
+console.log(ans);
 
 
 
-
-
-var a = 5; 
-var b = 
