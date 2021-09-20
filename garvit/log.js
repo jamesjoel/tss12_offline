@@ -1,19 +1,18 @@
-var a = a
+var a = "b";
 
 switch(a){
-    case a : console.log("indore");
+    case "a" : console.log("indore");
               break;
-    case b : console.log("mumbai");
+    case "b" : console.log("mumbai");
               break;
-    case c : console.log("bhopal");
+    case "c" : console.log("bhopal");
               break;
-    case d : console.log("jobat");
-
+    case "d" : console.log("jobat");
             break;
 
 }    
 
-
+/*
 var b = b ;
 
 
@@ -29,4 +28,4 @@ switch(b){
     default : console.log("no city found");                   
               break;
 
-}
+}*/
