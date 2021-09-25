@@ -8,3 +8,4 @@ function EMI(p,r,n)
     console.log(ans)
 }
 EMI(500000,8,60);
+EMI(1000000,8,60);

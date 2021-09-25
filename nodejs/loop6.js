@@ -10,10 +10,9 @@ var data = [
         city : ["bhopal", "delhi", "ujjain"]
     }
 ];
-
 data.forEach(function(x){
    x.city.forEach(function(y){
        console.log(y);
-   })
-   console.log("---------");
+    })
+       console.log("---------");
 })

@@ -38,5 +38,5 @@ var data = [
 ];
 
 data.forEach(function(x){
-    console.log(x.title, "-------", x.price);
+    console.log(x.title, "-------" , x.price);
 })
