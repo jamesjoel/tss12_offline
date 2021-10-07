@@ -1,4 +1,4 @@
--------------- Loop in Js ----------------
+// -------------- Loop in Js ----------------
 /*
     1. for()
 
@@ -23,21 +23,21 @@
 // }
 //  init; comp/cond; inc/dec
 
-// var total = 0;
-// for(var a=1; a<=100; a++)
-// {
-//    total += a;
-// }
-// console.log(total);
-
-
-var a = 10;
-var ans = 1;
-for(var x = a; x>=1; x--)
+var total = 0;
+for(var a=1; a<=31; a++)
 {
-    ans *= x;
+   total += a;
 }
-console.log(ans);
+console.log(total);
+
+
+// var a = 1;
+// var ans = 31;
+// for(var x = 1; x<=31; a++)
+// {
+//     ans *= x;
+// }
+// console.log(ans);
 
 
 
