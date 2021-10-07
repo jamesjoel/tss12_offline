@@ -21,7 +21,14 @@ app.get("/contact", (req, res)=>{
     res.render("contact");
 })
 app.get("/employee", (req, res)=>{
-    res.render("employee");
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").find().toArray((err, result)=>{
+            // console.log(result);
+            var pagedata = { result : result };
+            res.render("employee", pagedata);
+        });
+    })
 })
 
 app.post("/add", (req, res)=>{
@@ -30,12 +37,22 @@ app.post("/add", (req, res)=>{
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
         var db = con.db("tss11");
         db.collection("employee").insertOne(formdata, ()=>{
-            res.redirect("/");
+            res.redirect("/employee");
         });
     });
 
 
 })
+
+app.get("/deleteall", (req, res)=>{
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").deleteMany({}, ()=>{
+            res.redirect("/employee");
+        })
+    })
+})
+
 
 
 
