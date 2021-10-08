@@ -1,0 +1,55 @@
+<%- include('header') %>
+    <div class="container mt-3">
+        
+        <div class="row mt-2">
+            <div class="col-md-8 offset-md-2">
+                <h3 class="text-center">View Employee Information</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <h6>Information</h6>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Full Name</td>
+                                <td><%= result.full_name %></td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>
+                                    <%= result.age %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salary</td>
+                                <td>
+                                    <%= result.salary %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City</td>
+                                <td>
+                                    <%= result.city %>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-danger" href="/employee">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--
+
+
+Day <select>
+    <option>Day</option>
+    <% for(var a=1990; a<=2005; a++){ %>
+        <option><%= a %></option>
+    <% } %>
+</select>
+<br />
+-->

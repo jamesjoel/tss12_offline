@@ -3,6 +3,8 @@ var app = express();
 
 var MongoClient = require("mongodb").MongoClient;
 
+var mongodb = require("mongodb");
+
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/assets"));
@@ -54,6 +56,35 @@ app.get("/deleteall", (req, res)=>{
 })
 
 
+app.get("/delete/:a", (req, res)=>{
+    // console.log(req.params.a);
+    var x = req.params.a; // 61502454
+    // console.log(x);
+    var y = mongodb.ObjectId(x); // ObjectId(61502454)
+
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").deleteMany({ _id : y }, ()=>{
+            res.redirect("/employee");
+        })
+    })
+})
+
+
+app.get("/view/:a", (req, res)=>{
+    var x = req.params.a;
+    var y = mongodb.ObjectId(x);
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").find({ _id : y}).toArray((err, result)=>{
+            // console.log(result);
+            var pagedata = { result : result[0] };
+            res.render("view_employee", pagedata);
+
+        })
+    })
+
+})
 
 
 var port = 3000;
