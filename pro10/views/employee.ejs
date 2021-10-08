@@ -12,9 +12,10 @@
                     <tr>
                         <th>S.No.</th>
                         <th>Full Name</th>
-                        <th>Age</th>
+                        
                         <th>City</th>
-                        <th>Salary</th>
+                        
+                        <th>View</th>
                         <th>Edit</th>
                         <th>Delete</th>
 
@@ -23,11 +24,12 @@
                         <tr>
                             <td><%= n+1 %></td>
                             <td><%= x.full_name %></td>
-                            <td><%= x.age %></td>
+                            
                             <td><%= x.city %></td>
-                            <td><%= x.salary %></td>
+                            
+                            <td><a href="/view/<%= x._id %>" class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                             <td><a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                            <td><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
+                            <td><a href="/delete/<%= x._id %>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
                         </tr>
                     <% }) %>
 
