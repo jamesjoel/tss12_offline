@@ -14,6 +14,7 @@ app.use(express.urlencoded());
 
 
 app.get("/", (req, res)=>{
+    // console.log("welcome");
     res.render("home");
 })
 app.get("/about", (req, res)=>{
