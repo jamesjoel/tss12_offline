@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  a = "rohit";
+  b = true;
+  x=false;
+
+  z = 27;
+
+  c=300;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -52,5 +52,19 @@ export class HomeComponent implements OnInit {
   demo7(){
     console.log("Key Up");
   }
-
+  demo8(){
+    console.log("Focus");
+  }
+  demo9(){
+    console.log("blur");
+  }
+  demo10(){
+    console.log("Change");
+  }
+  demo11(){
+    console.log("right button click");
+  }
+  demo12(){
+    console.log("Wheel click");
+  }
 }
