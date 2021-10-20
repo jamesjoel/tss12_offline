@@ -14,6 +14,7 @@ app.use(express.urlencoded());
 
 
 app.get("/", (req, res)=>{
+    // console.log("welcome");
     res.render("home");
 })
 app.get("/about", (req, res)=>{
@@ -35,6 +36,7 @@ app.get("/employee", (req, res)=>{
 
 app.post("/add", (req, res)=>{
     // console.log(req.body);
+    // return;
     var formdata = req.body;
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
         var db = con.db("tss11");
@@ -86,6 +88,31 @@ app.get("/view/:a", (req, res)=>{
 
 })
 
+
+app.get("/edit/:a", (req, res)=>{
+    var x = mongodb.ObjectId(req.params.a);
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").find({ _id : x }).toArray((err, result)=>{
+            var pagedata = { result : result[0] };
+            res.render("edit_employee", pagedata);
+        })
+    })
+
+
+})
+
+
+app.post("/update/:a", (req, res)=>{
+    // console.log(req.body);
+    var x = mongodb.ObjectId(req.params.a);
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss11");
+        db.collection("employee").updateMany({_id : x}, { $set : req.body }, ()=>{
+            res.redirect("/employee");
+        })
+    })
+})
 
 var port = 3000;
 app.listen(port, ()=>{
