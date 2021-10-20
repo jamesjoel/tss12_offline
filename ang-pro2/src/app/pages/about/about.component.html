@@ -1,0 +1,28 @@
+<p>about works!</p>
+<h1 *ngIf="a=='rohit' || b==false">Hello Indore</h1>
+
+<h1 *ngIf="x; else block">Rohit</h1>
+<ng-template #block>
+    <h1>Amar</h1>
+</ng-template>
+
+
+
+<hr />
+<Hr />
+<ng-template [ngIf]="z%2!=0" [ngIfElse]="apple">
+    <h1>Indore</h1>
+</ng-template>
+<ng-template #apple>
+    <h1>Mumbai</h1>
+</ng-template>
+
+<Hr />
+<Hr />
+<div [ngSwitch]="c">
+    <h1 *ngSwitchCase="100">Indore</h1>
+    <h1 *ngSwitchCase="200">Mumbai</h1>
+    <h1 *ngSwitchCase="300">Pune</h1>
+    <h1 *ngSwitchCase="400">Delhi</h1>
+    <h1 *ngSwitchDefault>No City</h1>
+</div>
