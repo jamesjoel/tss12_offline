@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '../../services/test.service';
 
 @Component({
   selector: 'app-about',
@@ -15,11 +16,16 @@ export class AboutComponent implements OnInit {
 
   c=300;
 
-  constructor() { 
+  constructor(private y : TestService) { 
     console.log("welcome");
   }
 
   ngOnInit(): void {
+  }
+
+  demo1(){
+    // console.log("welcome");
+    this.y.demo();
   }
 
 }
