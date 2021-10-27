@@ -1,0 +1,21 @@
+div{
+    width: 100%;
+    padding: 20px;
+    background-color: #856974;
+}
+div ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+div ul li{
+    float: left;
+}
+div ul li a{
+    display: inline-block;
+    padding: 7px 15px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #CACDC0;
+    color: #000;
+}
