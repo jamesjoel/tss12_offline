@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import '../../assets/userCss/style.css';
+
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
@@ -10,6 +10,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { WelcomeComponent } from './shared/welcome/welcome.component';
+import { BookTableComponent } from './shared/book-table/book-table.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FooterComponent } from './shared/footer/footer.component';
     AboutComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    WelcomeComponent,
+    BookTableComponent
   ],
   imports: [
     CommonModule,

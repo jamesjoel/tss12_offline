@@ -8,6 +8,8 @@ import { DashComponent } from './pages/dash/dash.component';
 import { VieworderComponent } from './pages/vieworder/vieworder.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { DishesComponent } from './pages/dishes/dishes.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FooterComponent } from './shared/footer/footer.component';
     DashComponent,
     VieworderComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MenuComponent,
+    DishesComponent
   ],
   imports: [
     CommonModule,
