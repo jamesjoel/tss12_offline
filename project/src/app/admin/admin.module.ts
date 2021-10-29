@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { DishesComponent } from './pages/dishes/dishes.component';
+import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DishesComponent } from './pages/dishes/dishes.component';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    DishesComponent
+    DishesComponent,
+    AddMenuComponent
   ],
   imports: [
     CommonModule,
