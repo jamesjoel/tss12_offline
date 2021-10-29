@@ -6,6 +6,7 @@ import { VieworderComponent } from './pages/vieworder/vieworder.component';
 import { AdminComponent } from './admin.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { DishesComponent } from './pages/dishes/dishes.component';
+import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path : "dishes",
         component : DishesComponent
+      },
+      {
+        path : "add-menu",
+        component : AddMenuComponent
       }
     ]
   }
