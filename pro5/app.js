@@ -1,16 +1,21 @@
-// require the "express" module
-var abc = require("express");
 
-// call that default function 
-var demo = abc();
+var express = require("express");
+var app = express();
 
-// console.log("hello");
-// now we have to creaet our "virtual server" by listen() function
-// demo.listen(3000);
+console.log("hello --------------");
+app.listen(3000, ()=>{
+    console.log("server running");
+});
+// console.log("welcome");
 
-    demo.listen(3000, ()=>{
-        console.log("server running");
+MongoClient.connect("", (err, con)=>{
+    db = con.db("");
+    db.coll().find().toArray((err, result)=>{
+        console.log(result);
     })
+})
+res.render();
 
-// console.log(demo);
+
+
 

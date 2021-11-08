@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validator } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-add-menu',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMenuComponent implements OnInit {
 
-  constructor() { }
+  myForm : FormGroup;
+  constructor(private _fb : FormBuilder) { 
+    this.myForm = this._fb.group({
+      name : [""]
+    })
+  }
 
   ngOnInit(): void {
   }

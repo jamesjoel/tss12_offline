@@ -14,12 +14,11 @@ export class MenuService {
   getAll(){
     return this._http.get<any>(this.apiUrl);
   }
-  getById(id:any){
-    return this._http.get<any>(this.apiUrl+"/"+id);
-  }
-  add(data: any){
+  add(data:any){
     return this._http.post<any>(this.apiUrl, data);
   }
+  
+  
 
 
 }
