@@ -11,6 +11,7 @@ import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { UpdateAreaComponent } from './shared/update-area/update-area.component';
 import { BookTableComponent } from './shared/book-table/book-table.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { SignupComponent } from './user/pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     WelcomeComponent,
     UpdateAreaComponent,
     BookTableComponent,
-    FooterComponent
+    FooterComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
