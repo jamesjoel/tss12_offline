@@ -16,12 +16,12 @@
                     <ul>
                         <li class="active"><a routerLink="/">home</a></li>
                         <li><a routerLink="/about">about</a></li>
-                        <li><a href="menu.html">menu</a></li>
+                        
                         <li><a routerLink="/signup">signup</a></li>
-                        <li><a href="#">blog</a>
+                        <li><a href="#">menu</a>
                             <ul class="sub-menu">
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
+                                <li *ngFor="let m of allMenu"><a href="#">{{ m.name }}</a></li>
+                                
                             </ul>
                         </li>
                         <li><a routerLink="/contact">contact</a></li>
