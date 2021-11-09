@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validator } from '@angular/forms';
+import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 
 
 
@@ -10,14 +10,21 @@ import { FormGroup, FormBuilder, Validator } from '@angular/forms';
 })
 export class AddMenuComponent implements OnInit {
 
-  myForm : FormGroup;
+  menuForm : FormGroup;
+  checkForm=false;
   constructor(private _fb : FormBuilder) { 
-    this.myForm = this._fb.group({
-      name : [""]
+    this.menuForm = this._fb.group({
+      name : ["", Validators.required]
     })
   }
 
   ngOnInit(): void {
+  }
+  submit(){
+    if(this.menuForm.invalid){
+      this.checkForm=true;
+      return;
+    }
   }
 
 }
