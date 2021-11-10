@@ -13,6 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { BookTableComponent } from './shared/book-table/book-table.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     FooterComponent,
     WelcomeComponent,
     BookTableComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

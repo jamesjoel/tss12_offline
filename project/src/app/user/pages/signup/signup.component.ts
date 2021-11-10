@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
 // FormGroup is a interface
 // FormBuilder is a service
 @Component({
@@ -13,10 +15,14 @@ export class SignupComponent implements OnInit {
 
   checkForm:boolean=false;
 
-  constructor(private _fb:FormBuilder) {
+  constructor(
+    private _fb:FormBuilder,
+    private _user : UserService,
+    private _router : Router
+    ) {
     this.signupForm = this._fb.group({
       full_name: ["", Validators.required],
-      email : ["", Validators.required],
+      email : ["", [Validators.required, Validators.email]],
       password: ["", Validators.required],
       re_password: ["", Validators.required],
       address: ["", Validators.required],
@@ -33,6 +39,11 @@ export class SignupComponent implements OnInit {
       this.checkForm=true;
       return;
     }
+    // console.log(this.signupForm.value);
+    this._user.signup(this.signupForm.value).subscribe((result)=>{
+      // console.log(result);
+      this._router.navigate(["/login"]);
+    })
     
   }
 
