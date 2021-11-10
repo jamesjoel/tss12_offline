@@ -13,27 +13,27 @@ export class SignupComponent implements OnInit {
 
   checkForm:boolean=false;
 
-  constructor(private _fb:FormBuilder) {
-    this.signupForm = this._fb.group({
-      full_name: ["", Validators.required],
-      email : ["", Validators.required],
-      password: ["", Validators.required],
-      re_password: ["", Validators.required],
-      address: ["", Validators.required],
-      city: ["", Validators.required],
-      contact: ["", Validators.required]
-    });
-   }
+        constructor(private _fb:FormBuilder) {
+          this.signupForm = this._fb.group({
+            full_name: ["", Validators.required],
+            email : ["", Validators.required],
+            password: ["", Validators.required],
+            re_password: ["", Validators.required],
+            address: ["", Validators.required],
+            city: ["", Validators.required],
+            contact: ["", Validators.required]
+          });
+        }
 
-  ngOnInit(): void {
-  }
+        ngOnInit(): void {
+        }
 
-  signup(){
-    if(this.signupForm.invalid){
-      this.checkForm=true;
-      return;
-    }
-    
-  }
-
-}
+          signup(){
+            if(this.signupForm.invalid){
+              this.checkForm=true;
+              return;
+            }
+          
+        }
+        
+      } 
