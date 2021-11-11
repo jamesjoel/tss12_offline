@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="page-wrapper">
+
+    <div class="container-fluid">
+        <div class="row">
+            <a routerLink="/admin/dishes" class="btn btn-danger">Back</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-4">
+                <form>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Add New Dish Items</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Select Menu Item</label>
+                                <select class="form-control">
+                                    <option>Select</option>
+                                    <option *ngFor="let m of allMenu">{{ m.name }}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Dish Name</label>
+                                <input type="text" class="form-control" />
+                            
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-primary" type="submit" >Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<app-footer></app-footer>
