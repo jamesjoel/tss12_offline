@@ -10,8 +10,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "mongodb": "^4.1.3"
   },
   "devDependencies": {},
   "description": ""
+=======
+    "mongodb": "^4.1.3",
+    "sha1": "^1.1.1"
+  }
+>>>>>>> c84471b57fc16b9bd27d7b74d6af40084b888a71
 }
