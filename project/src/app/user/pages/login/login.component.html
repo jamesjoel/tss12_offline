@@ -20,6 +20,7 @@
                         <input formControlName="password" [ngClass]="{'is-invalid': loginForm.controls.password.errors && checkForm }" type="password" class="form-control">
                         <div *ngIf="loginForm.controls.password.errors && checkForm" class="invalid-feedback">Enter Your Password</div>
 
+                        <p class="text-danger text-center">{{ errorMsg }}</p>
                     </div>
                 </div>
                 <div class="card-footer">

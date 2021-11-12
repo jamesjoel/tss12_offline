@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-4">
-                <form>
+                <form [formGroup]="dishForm">
                     <div class="card">
                         <div class="card-header">
                             <h4>Add New Dish Items</h4>
@@ -15,21 +15,27 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="">Select Menu Item</label>
-                                <select class="form-control">
-                                    <option>Select</option>
-                                    <option *ngFor="let m of allMenu">{{ m.name }}</option>
+                                <select [ngClass]="{'is-invalid': dishForm.controls.menu.errors && checkForm }" formControlName="menu" class="form-control">
+                                    <option value="">Select</option>
+                                    <option *ngFor="let m of allMenu" value="{{ m.name }}">{{ m.name }}</option>
 
                                 </select>
+
+                                <div *ngIf="dishForm.controls.menu.errors && checkForm" class="invalid-feedback">
+                                    Select Menu Item for Dish
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="">Dish Name</label>
-                                <input type="text" class="form-control" />
-                            
+                                <input formControlName="name" [ngClass]="{'is-invalid': dishForm.controls.name.errors && checkForm }"  type="text" class="form-control" />
+                                <div *ngIf="dishForm.controls.name.errors && checkForm" class="invalid-feedback">
+                                    Insert Dish Name
+                                </div>
                             </div>
                         </div>
                         
                         <div class="card-footer">
-                            <button class="btn btn-primary" type="submit" >Add</button>
+                            <button class="btn btn-primary" type="submit" (click)="submit()" >Add</button>
                         </div>
                     </div>
                 </form>
