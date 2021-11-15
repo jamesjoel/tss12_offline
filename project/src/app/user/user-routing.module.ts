@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { UserComponent } from './user.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MyAccountComponent } from './pages/my-account/my-account.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path : "login",
         component : LoginComponent
+      },
+      {
+        path : "my-account",
+        component : MyAccountComponent
       }
     ]
   }

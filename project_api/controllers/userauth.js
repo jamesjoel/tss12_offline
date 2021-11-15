@@ -4,6 +4,9 @@ var mongodb = require("mongodb");
 var MongoClient = mongodb.MongoClient;
 var database = require("../config/database");
 var collName = "user";
+var sha1 = require("sha1");
+var jwt = require("jsonwebtoken");
+
 
 routes.post("/", (req, res)=>{
     // console.log(req.body);
@@ -13,11 +16,20 @@ routes.post("/", (req, res)=>{
             // console.log(result);
             if(result.length == 1) // email id is correct
             {
+                if(result[0].password == sha1(req.body.password)) // password is correct
+                {
+                    var token = jwt.sign(result[0], "my name is james");
+                    res.status(200).send(token);
 
+                }
+                else
+                {
+                    res.status(401).send({ success: false, type: 2 });
+                }
             }
             else
             {
-                res.status(401).send({ success : false, type : 1});
+                res.status(401).send({ success : false, type : 1 });
             }
         })
     })
