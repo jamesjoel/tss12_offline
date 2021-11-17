@@ -8,6 +8,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { DishesComponent } from './pages/dishes/dishes.component';
 import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 import { AddDishComponent } from './pages/add-dish/add-dish.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
     children : [
       {
         path : "",
-        component : HomeComponent
+        component : LoginComponent
       },
       {
         path : "dashboard",

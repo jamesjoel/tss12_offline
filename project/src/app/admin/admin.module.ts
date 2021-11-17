@@ -14,6 +14,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { DishesComponent } from './pages/dishes/dishes.component';
 import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 import { AddDishComponent } from './pages/add-dish/add-dish.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AddDishComponent } from './pages/add-dish/add-dish.component';
     MenuComponent,
     DishesComponent,
     AddMenuComponent,
-    AddDishComponent
+    AddDishComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
