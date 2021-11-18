@@ -5,6 +5,7 @@ var MongoClient = mongodb.MongoClient;
 var database = require("../config/database");
 var collName = "admin";
 var sha1 = require("sha1");
+var jwt = require("jsonwebtoken");
 
 
 routes.post("/auth", (req, res)=>{
@@ -18,7 +19,8 @@ routes.post("/auth", (req, res)=>{
             {
                 if(result[0].password == sha1(req.body.password))
                 {
-                    res.status(200).send({ success : true });
+                    var token = jwt.sign(result[0], "this is admin panel");
+                    res.status(200).send({ token : token });
                 }
                 else
                 {

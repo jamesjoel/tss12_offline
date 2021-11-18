@@ -19,7 +19,8 @@ routes.post("/", (req, res)=>{
                 if(result[0].password == sha1(req.body.password)) // password is correct
                 {
                     var token = jwt.sign(result[0], "my name is james");
-                    res.status(200).send(token);
+                    // console.log(token);
+                    res.status(200).send({token : token});
 
                 }
                 else

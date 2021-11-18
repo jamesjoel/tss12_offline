@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
     // if status is 200 serise then data come into "result"
     // but if status is 400 serise then data come into another call back "err" object.
     this._user.do_login(this.loginForm.value).subscribe((result)=>{
+      // console.log("---------------");
       // console.log(result);
+      localStorage.setItem("jwt_token", result.token);
       this._router.navigate(["/my-account"]);
     }, (err)=>{
-      //console.log(err.error);
+      console.log(err);
       if(err.error.type==1)
       {
         this.errorMsg="This Email Id is not registered !";
