@@ -14,6 +14,7 @@ import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { BookTableComponent } from './shared/book-table/book-table.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MyAccountComponent } from './pages/my-account/my-account.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoginComponent } from './pages/login/login.component';
     WelcomeComponent,
     BookTableComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    MyAccountComponent
   ],
   imports: [
     CommonModule,

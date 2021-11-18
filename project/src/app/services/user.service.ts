@@ -7,11 +7,16 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
 
-  apiUrl = environment.API_URL+"/api/user/signup";
+  apiUrlSignup = environment.API_URL+"/api/user/signup";
+  apiUrlAuth = environment.API_URL+"/api/user/auth";
 
   constructor(private _http : HttpClient) { }
 
   signup(obj:any){
-    return this._http.post<any>(this.apiUrl, obj);
+    return this._http.post<any>(this.apiUrlSignup, obj);
   }
+  do_login(obj:any){
+    return this._http.post<any>(this.apiUrlAuth, obj);
+  }
+
 }
