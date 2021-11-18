@@ -59,8 +59,16 @@
                             </ul>
                         </li> -->
                         <!-- <li><a routerLink="/contact">contact</a></li> -->
-                        <li><a routerLink="/signup">signup</a></li>
-                        <li><a routerLink="/login">login</a></li>
+                        <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="logout_menu">
+                            <li><a routerLink="/my-account">my-account</a></li>
+                            <li><a href="#" (click)="_auth.logout()">logout</a></li>
+                        </ng-template>
+
+                        <ng-template #logout_menu>
+                            <li><a routerLink="/signup">signup</a></li>
+                            <li><a routerLink="/login">login</a></li>
+                        </ng-template>
+                        
                         
                     </ul>
                 </div>

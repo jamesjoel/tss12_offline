@@ -8,6 +8,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 
+import { BackdoorGuard } from './guard/backdoor.guard';
+
 const routes: Routes = [
   {
     path : "",
@@ -35,7 +37,8 @@ const routes: Routes = [
       },
       {
         path : "my-account",
-        component : MyAccountComponent
+        component : MyAccountComponent,
+        canActivate : [BackdoorGuard]
       }
     ]
   }

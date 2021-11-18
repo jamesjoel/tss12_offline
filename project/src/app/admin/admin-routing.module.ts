@@ -9,6 +9,7 @@ import { DishesComponent } from './pages/dishes/dishes.component';
 import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 import { AddDishComponent } from './pages/add-dish/add-dish.component';
 import { LoginComponent } from './pages/login/login.component';
+import { BackdoorGuard } from './guard/backdoor.guard';
 
 
 const routes: Routes = [
@@ -22,27 +23,33 @@ const routes: Routes = [
       },
       {
         path : "dashboard",
-        component : DashComponent
+        component : DashComponent,
+        canActivate : [BackdoorGuard]
       },
       {
         path : "vieworder",
-        component : VieworderComponent
+        component : VieworderComponent,
+        canActivate: [BackdoorGuard]
       },
       {
         path : "menu",
-        component : MenuComponent
+        component : MenuComponent,
+        canActivate: [BackdoorGuard]
       },
       {
         path : "dishes",
-        component : DishesComponent
+        component : DishesComponent,
+        canActivate: [BackdoorGuard]
       },
       {
         path : "add-menu",
-        component : AddMenuComponent
+        component : AddMenuComponent,
+        canActivate: [BackdoorGuard]
       },
       {
         path : "add-dish",
-        component : AddDishComponent
+        component : AddDishComponent,
+        canActivate: [BackdoorGuard]
       }
     ]
   }
