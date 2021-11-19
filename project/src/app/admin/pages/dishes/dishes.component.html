@@ -12,11 +12,14 @@
                         <th>S.No.</th>
                         <th>Dish Name</th>
                         <th>Menu</th>
+                        <th>Price</th>
+                        
                     </tr>
                     <tr *ngFor="let d of allDish; let n = index">
                         <td>{{ n+1 }}</td>
                         <td>{{ d.name }}</td>
                         <td>{{ d.menu }}</td>
+                        <td>{{ d.price }}</td>
                     </tr>
 
 

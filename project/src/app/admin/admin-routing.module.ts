@@ -10,6 +10,7 @@ import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 import { AddDishComponent } from './pages/add-dish/add-dish.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
+import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     children : [
       {
         path : "",
-        component : LoginComponent
+        component : LoginComponent,
+        canActivate : [AntiBackdoorGuard]
       },
       {
         path : "dashboard",

@@ -27,21 +27,48 @@ export class AddDishComponent implements OnInit {
       });
       this.dishForm = this._fb.group({
         menu : ["", Validators.required],
-        name : ["", Validators.required]
+        name : ["", Validators.required],
+        price : ["", Validators.required],
+        detail : ["", Validators.required],
+        image : ["", Validators.required]
+      
       })
    }
 
   ngOnInit(): void {
   }
 
-  submit(){
+  submit(myfile:any){
+    
+    
+
     if(this.dishForm.invalid){
+      
       this.checkForm=true;
-      return;
+      // return;
     }
+    console.log(myfile.files[0]);
+    if(myfile.files[0].size > (2*1024*1024)){
+      // alert()
+      this.checkForm = true;
+      this.dishForm.controls.image.setErrors({ sizeErr : true });
+      // console.log(this.dishForm.controls.image);
+
+    }
+
+    if(myfile.files[0].type != "image/jpg"){
+      this.checkForm = true;
+      this.dishForm.controls.image.setErrors({ typeErr: true });
+    }
+
+
+    return;
     // console.log(this.dishForm.value)
     this._dish.save(this.dishForm.value).subscribe((result)=>{
       this._router.navigate(["/admin/dishes"]);
     })
   }
+
+
+  
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DishService } from '../../../services/dish.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  allDish:any=[];
+
+  constructor(
+    private _dish : DishService
+  ) {
+
+    this._dish.getAll().subscribe((result)=>{
+      this.allDish = result;
+    })
+
+   }
 
   ngOnInit(): void {
   }
