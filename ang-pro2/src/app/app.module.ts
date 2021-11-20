@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { Box1Component } from './shared/box1/box1.component';
 import { HelpComponent } from './pages/help/help.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { UserComponent } from './pages/user/user.component';
+import { MyFormComponent } from './pages/my-form/my-form.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { UserComponent } from './pages/user/user.component';
     Box1Component,
     HelpComponent,
     ProductsComponent,
-    UserComponent
+    UserComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
