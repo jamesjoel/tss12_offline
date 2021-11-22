@@ -4,7 +4,10 @@
     <div class="container-fluid">
         <div class="row">
             <a routerLink="/admin/dishes" class="btn btn-danger">Back</a>
+
+            
         </div>
+        
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-4">
                 <form [formGroup]="dishForm">
@@ -32,10 +35,33 @@
                                     Insert Dish Name
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="">Dish Price</label>
+                                <input formControlName="price" [ngClass]="{'is-invalid': dishForm.controls.price.errors && checkForm }"  type="text" class="form-control" />
+                                <div *ngIf="dishForm.controls.price.errors && checkForm" class="invalid-feedback">
+                                    Insert Dish Price
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Select Dish Image</label>
+                                <input formControlName="image"  [ngClass]="{'is-invalid': dishForm.controls.image.errors && checkForm }" type="file" #myfile class="form-control" />
+                                <div *ngIf="dishForm.controls.image.errors && checkForm" class="invalid-feedback">
+                                    <div *ngIf="dishForm.controls.image.errors.required">Select Your Image</div>
+                                    <div *ngIf="dishForm.controls.image.errors.typeErr">The file is not an Image</div>
+                                    <div *ngIf="dishForm.controls.image.errors.sizeErr">Image Size is Too Big</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Dish Detail</label>
+                                <textarea formControlName="detail" [ngClass]="{'is-invalid': dishForm.controls.detail.errors && checkForm }"  class="form-control" ></textarea>
+                                <div *ngIf="dishForm.controls.detail.errors && checkForm" class="invalid-feedback">
+                                    Insert Dish Detail
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="card-footer">
-                            <button class="btn btn-primary" type="submit" (click)="submit()" >Add</button>
+                            <button class="btn btn-primary" type="submit" (click)="submit(myfile)" >Add</button>
                         </div>
                     </div>
                 </form>
