@@ -6,6 +6,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MyFormComponent } from './pages/my-form/my-form.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { StudentComponent } from './pages/student/student.component';
 import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path : "user",
     component : UserComponent
+  },
+  {
+    path : "student",
+    component : StudentComponent
   }
 ];
 

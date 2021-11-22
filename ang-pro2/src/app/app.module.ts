@@ -17,6 +17,9 @@ import { HelpComponent } from './pages/help/help.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { UserComponent } from './pages/user/user.component';
 import { MyFormComponent } from './pages/my-form/my-form.component';
+import { StudentComponent } from './pages/student/student.component';
+import { BoxComponent } from './shared/box/box.component';
+import { UserInfoComponent } from './shared/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { MyFormComponent } from './pages/my-form/my-form.component';
     HelpComponent,
     ProductsComponent,
     UserComponent,
-    MyFormComponent
+    MyFormComponent,
+    StudentComponent,
+    BoxComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
