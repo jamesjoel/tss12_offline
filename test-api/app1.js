@@ -7,26 +7,28 @@ var jwt = require("jsonwebtoken");
 app.use(express.json());
 app.use(express.urlencoded());
 
+app.use(cors());
+
 var userData = [
     {
         username : "rohit@gmail.com",
-        password : sha1(123)
+        password : sha1("123")
     },
     {
         username : "garvit@gmail.com",
-        password : sha1(123)
+        password : sha1("123")
     },
     {
         username : "ram@gmail.com",
-        password : sha1(123)
+        password : sha1("123")
     },
     {
         username : "vinita@gmail.com",
-        password : sha1(123)
+        password : sha1("123")
     },
     {
         username : "vaishnavi@gmail.com",
-        password : sha1(123)
+        password : sha1("123")
     }
     
 ]
@@ -37,7 +39,7 @@ app.post("/api/user/auth", (req, res)=>{
     var check = false;
     for(var i=0; i < userData.length; i++)
     {
-        if(userData[i] == u)
+        if(userData[i].username == u)
         {
             check = true;
             break;
@@ -75,6 +77,8 @@ app.listen(3000, ()=>{
 
 
 /*
+
+nodemon app1
     localhost:3000/api/user/auth
 
     1. make sure your form input types name is 

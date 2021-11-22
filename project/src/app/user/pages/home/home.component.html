@@ -11,21 +11,7 @@
             </div>
         </div>
         <div class="row">
-            <div *ngFor="let d of allDish" class="col-md-4 col-sm-6">
-                <div class="single-food">
-                    <div class="food-img">
-                        <img src="assets/images/food1.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="food-content">
-                        <div class="d-flex justify-content-between">
-                            <h5>{{ d.name }}<small> ({{ d.menu }})</small></h5>
-                            <span class="style-change">&#8377;{{ d.price }}</span>
-                        </div>
-                        <p class="pt-3">{{ d.detail }}</p>
-                    </div>
-                </div>
-            </div>
-            
+            <app-show-dish class="col-md-4 col-sm-6" *ngFor="let x of allDish" [x]="x"></app-show-dish>            
         </div>
     </div>
 </section>
