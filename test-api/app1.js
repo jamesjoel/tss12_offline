@@ -3,11 +3,13 @@ var app = express();
 var cors = require("cors");
 var sha1 = require("sha1");
 var jwt = require("jsonwebtoken");
+var fileupload = require("express-fileupload");
 
 app.use(express.json());
 app.use(express.urlencoded());
 
 app.use(cors());
+app.use(fileupload());
 
 var userData = [
     {
@@ -32,6 +34,14 @@ var userData = [
     }
     
 ]
+
+app.post("/api/upload", (req, res)=>{
+    // console.log(req.files);
+    var file = req.files.img;
+    file.mv(__dirname+"/assets/images/"+file.name, (err)=>{
+        console.log("--------------");
+    });
+})
 
 app.post("/api/user/auth", (req, res)=>{
     var u = req.body.username;
