@@ -38,33 +38,34 @@ export class AddDishComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(myfile:any){
+  submit(image:any){
     
-    
-
     if(this.dishForm.invalid){
-      
       this.checkForm=true;
-      // return;
+      if (image.files[0] !== undefined) {
+        if (image.files[0].type != "image/jpg"
+          && image.files[0].type != "image/pdf"
+          && image.files[0].type != "image/jpeg"
+          && image.files[0].type != "image/png") {
+
+          // alert();
+          this.dishForm.controls.image.setErrors({ typeErr: true })
+          return;
+        }
+
+        if (image.files[0].size > (2 * 1024 * 1024)) {
+          this.dishForm.controls.image.setErrors({ sizeErr: true })
+          return;
+        }
+      }
+      return;
     }
-    console.log(myfile.files[0]);
-    if(myfile.files[0].size > (2*1024*1024)){
-      // alert()
-      this.checkForm = true;
-      this.dishForm.controls.image.setErrors({ sizeErr : true });
-      // console.log(this.dishForm.controls.image);
+    
+    let form = new FormData();
+    form.append("image", image.files[0]);
+    form.append("formdata", JSON.stringify(this.dishForm.value));
 
-    }
-
-    if(myfile.files[0].type != "image/jpg"){
-      this.checkForm = true;
-      this.dishForm.controls.image.setErrors({ typeErr: true });
-    }
-
-
-    return;
-    // console.log(this.dishForm.value)
-    this._dish.save(this.dishForm.value).subscribe((result)=>{
+    this._dish.save(form).subscribe((result)=>{
       this._router.navigate(["/admin/dishes"]);
     })
   }

@@ -29,7 +29,12 @@ routes.get("/:id", (req, res) => {
 
 
 routes.post("/", (req, res) => {
+    console.log(req.files);
+    var obj = JSON.parse(req.body.formdata);
+    console.log(obj);
 
+
+    return;
     MongoClient.connect(database.dbUrl, (err, con) => {
         var db = con.db(database.dbName);
         db.collection(collName).insertOne(req.body, (err) => {

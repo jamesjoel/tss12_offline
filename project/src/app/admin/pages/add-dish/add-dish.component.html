@@ -36,21 +36,28 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Dish Image</label>
+                                <input type="file" #image formControlName="image" [ngClass]="{'is-invalid': dishForm.controls.image.errors && checkForm }" class="form-control" />
+                                <div *ngIf="dishForm.controls.image.errors && checkForm" class="invalid-feedback">
+                                    <div *ngIf="dishForm.controls.image.errors.required">
+                                        Select Your Image
+                                    </div>
+                                    <div *ngIf="dishForm.controls.image.errors.typeErr">
+                                        This is not a Image type file
+                                    </div>
+                                    <div *ngIf="dishForm.controls.image.errors.sizeErr">
+                                        This image is too big (select only less then 2 mb)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Dish Price</label>
                                 <input formControlName="price" [ngClass]="{'is-invalid': dishForm.controls.price.errors && checkForm }"  type="text" class="form-control" />
                                 <div *ngIf="dishForm.controls.price.errors && checkForm" class="invalid-feedback">
                                     Insert Dish Price
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="">Select Dish Image</label>
-                                <input formControlName="image"  [ngClass]="{'is-invalid': dishForm.controls.image.errors && checkForm }" type="file" #myfile class="form-control" />
-                                <div *ngIf="dishForm.controls.image.errors && checkForm" class="invalid-feedback">
-                                    <div *ngIf="dishForm.controls.image.errors.required">Select Your Image</div>
-                                    <div *ngIf="dishForm.controls.image.errors.typeErr">The file is not an Image</div>
-                                    <div *ngIf="dishForm.controls.image.errors.sizeErr">Image Size is Too Big</div>
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="">Dish Detail</label>
                                 <textarea formControlName="detail" [ngClass]="{'is-invalid': dishForm.controls.detail.errors && checkForm }"  class="form-control" ></textarea>
@@ -61,7 +68,7 @@
                         </div>
                         
                         <div class="card-footer">
-                            <button class="btn btn-primary" type="submit" (click)="submit(myfile)" >Add</button>
+                            <button class="btn btn-primary" type="submit" (click)="submit(image)" >Add</button>
                         </div>
                     </div>
                 </form>
