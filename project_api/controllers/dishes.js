@@ -29,9 +29,15 @@ routes.get("/:id", (req, res) => {
 
 
 routes.post("/", (req, res) => {
-    console.log(req.files);
+    // console.log(req.files);
+    var file = req.files.image;
+    console.log(__dirname + "/assets/dish_images/" + file.name);
+    file.mv(__dirname+"/assets/dish_images/"+file.name, (err)=>{
+        console.log("--------------");
+    })
+
     var obj = JSON.parse(req.body.formdata);
-    console.log(obj);
+    // console.log(obj);
 
 
     return;
