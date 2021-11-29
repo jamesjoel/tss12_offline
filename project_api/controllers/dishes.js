@@ -5,6 +5,8 @@ var MongoClient = mongodb.MongoClient;
 
 var database = require("../config/database");
 var collName = "dishes";
+var path = require("path");
+var rand = require("randomstring");
 
 
 routes.get("/", (req, res) => {
@@ -29,24 +31,32 @@ routes.get("/:id", (req, res) => {
 
 
 routes.post("/", (req, res) => {
-    // console.log(req.files);
+    // console.log(JSON.parse(req.body.formdata));
+    
     var file = req.files.image;
-    console.log(__dirname + "/assets/dish_images/" + file.name);
-    file.mv(__dirname+"/assets/dish_images/"+file.name, (err)=>{
-        console.log("--------------");
-    })
+    var name = file.name;
 
     var obj = JSON.parse(req.body.formdata);
-    // console.log(obj);
+    var arr = name.split(".");
 
+    var ext = arr[arr.length-1];
 
-    return;
-    MongoClient.connect(database.dbUrl, (err, con) => {
-        var db = con.db(database.dbName);
-        db.collection(collName).insertOne(req.body, (err) => {
-            res.send({ success: true });
-        });
+    var dirpath = "/dish_images/"+rand.generate(20)+"."+ext;
+
+    
+    var image_path = path.resolve()+dirpath;
+    obj.image = dirpath;
+   
+    file.mv(image_path, (err)=>{
+        MongoClient.connect(database.dbUrl, (err, con)=>{
+            var db = con.db(database.dbName);
+            db.collection(collName).insertOne(obj, ()=>{
+                res.send({ success : true });
+            })
+        })
     })
+
+
 })
 
 

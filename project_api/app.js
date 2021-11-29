@@ -4,6 +4,8 @@ var routes = require("./config/routes");
 var cors = require("cors");
 var fileupload = require("express-fileupload");
 
+app.use(express.static(__dirname+"/assets"));
+
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(fileupload());

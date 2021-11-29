@@ -2,10 +2,11 @@
     <div >
         <div class="single-food">
             <div class="food-img">
-                <img src="assets/images/food1.jpg" class="img-fluid" alt="">
+                <img src="{{ apiUrl+x.image }}" class="img-fluid" alt="">
             </div>
             <div class="food-content">
                 <div class="d-flex justify-content-between">
+                    <p>{{ apiUrl+x.image }}</p>
                     <h5>{{ x.name }}<small> ({{ x.menu }})</small></h5>
                     <span class="style-change">&#8377; {{ x.price }}</span>
                 </div>
