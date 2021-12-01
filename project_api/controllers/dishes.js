@@ -44,13 +44,22 @@ routes.post("/", (req, res) => {
     var dirpath = "/dish_images/"+rand.generate(20)+"."+ext;
 
     
-    var image_path = path.resolve()+dirpath;
+    var image_path = path.resolve()+"/assets/"+dirpath;
     obj.image = dirpath;
    
-    file.mv(image_path, (err)=>{
-        MongoClient.connect(database.dbUrl, (err, con)=>{
-            var db = con.db(database.dbName);
-            db.collection(collName).insertOne(obj, ()=>{
+    // file.mv(image_path, (err)=>{
+    //     MongoClient.connect(database.dbUrl, (err, con)=>{
+    //         var db = con.db(database.dbName);
+    //         db.collection(collName).insertOne(obj, ()=>{
+    //             res.send({ success : true });
+    //         })
+    //     })
+    // })
+    MongoClient.connect(database.dbUrl, (err, con)=>{
+        var db = con.db(database.dbName);
+        db.collection(collName).insertOne(obj, ()=>{
+            file.mv(image_path, (err)=>{
+               
                 res.send({ success : true });
             })
         })

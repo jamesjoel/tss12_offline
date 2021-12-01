@@ -66,6 +66,7 @@ export class AddDishComponent implements OnInit {
     form.append("formdata", JSON.stringify(this.dishForm.value));
 
     this._dish.save(form).subscribe((result)=>{
+      console.log(result);
       this._router.navigate(["/admin/dishes"]);
     })
   }

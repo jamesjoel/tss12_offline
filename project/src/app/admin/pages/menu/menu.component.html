@@ -11,10 +11,14 @@
                     <tr>
                         <th>S.No.</th>
                         <th>Menu Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <tr *ngFor="let m of allMenu; let n = index">
                         <td>{{ n+1 }}</td>
                         <td>{{ m.name }}</td>
+                        <td><a href="#" class="btn btn-sm btn-info">Edit</a></td>
+                        <td><a data-toggle="modal" data-target="#delModal" href="#" (click)="askDelete(m)" class="btn btn-sm btn-danger">Delete</a></td>
                     </tr>
                 </table>
             </div>
@@ -25,3 +29,20 @@
 
 </div>
 <app-footer></app-footer>
+
+<div id="delModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Delete !</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are You sure want to delete <b *ngIf="menu">{{ menu.name }}</b> !</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" #closeBtn data-dismiss="modal">Close</button>
+                <button class="btn btn-danger"  (click)="confDelete(closeBtn)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

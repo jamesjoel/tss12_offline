@@ -17,6 +17,12 @@ export class MenuService {
   add(data:any){
     return this._http.post<any>(this.apiUrl, data);
   }
+  delete(data:any){
+    return this._http.delete<any>(this.apiUrl+"/"+data._id);
+  }
+  update(data:any){
+    return this._http.put<any>(this.apiUrl+"/"+data._id, data);
+  }
   
   
 
