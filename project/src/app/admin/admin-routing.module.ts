@@ -11,6 +11,7 @@ import { AddDishComponent } from './pages/add-dish/add-dish.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
 import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
+import { UsersComponent } from './pages/users/users.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,11 @@ const routes: Routes = [
         path : "add-dish",
         component : AddDishComponent,
         canActivate: [BackdoorGuard]
+      },
+      {
+        path : "users",
+        component : UsersComponent,
+        canActivate : [BackdoorGuard]
       }
     ]
   }

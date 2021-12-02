@@ -48,12 +48,27 @@ routes.put("/:id", (req, res) => {
         })
     })
 })
+// menu collection id ------> name
+// dishes collection --->menu delete ----> delete dishes
+// menu delete ----> id
+
+
 routes.delete("/:id", (req, res) => {
     var id = mongodb.ObjectId(req.params.id);
     MongoClient.connect(database.dbUrl, (err, con) => {
         var db = con.db(database.dbName);
-        db.collection(collName).deleteMany({_id : id }, ()=>{
-            res.send({ success : true });
+        
+        // find the menu by its id
+        db.collection(collName).find({ _id : id }).toArray((err, result)=>{
+            var obj = result[0];
+            var menuname = obj.name;
+            // delete the dishes by menu name
+            db.collection("dishes").deleteMany({ menu : menuname }, ()=>{
+                // delete menu by its id
+                db.collection(collName).deleteMany({_id : id }, ()=>{
+                    res.send({ success : true });
+                })
+            })
         })
     })
 })

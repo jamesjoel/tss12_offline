@@ -17,4 +17,12 @@ export class DishService {
   save(obj:any){
     return this._http.post<any>(this.apiUrl, obj);
   }
+
+  delete(obj:any){
+    return this._http.delete<any>(this.apiUrl+"/"+obj._id);
+  }
+
+  update(obj:any){
+    return this._http.put<any>(this.apiUrl+"/"+obj._id, obj);
+  }
 }

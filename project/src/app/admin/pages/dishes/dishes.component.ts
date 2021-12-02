@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DishService } from '../../../services/dish.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { DishService } from '../../../services/dish.service';
 })
 export class DishesComponent implements OnInit {
 
+  @ViewChild('closeBtn') closeBtn:any;
+
   allDish:any[]=[];
+  dish:any;
   constructor(
     private _dish : DishService
   ) {
@@ -18,6 +21,18 @@ export class DishesComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  askDelete(obj:any){
+    this.dish = obj;
+  }
+
+  confDelete(){
+    this._dish.delete(this.dish).subscribe((result)=>{
+        let n = this.allDish.indexOf(this.dish);
+        this.allDish.splice(n, 1);
+        this.closeBtn.nativeElement.click();
+    })
   }
 
 }

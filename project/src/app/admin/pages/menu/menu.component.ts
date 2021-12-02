@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../../../services/menu.service';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -8,6 +9,7 @@ import { MenuService } from '../../../services/menu.service';
 })
 export class MenuComponent implements OnInit {
 
+  @ViewChild('closeBtn') closeBtn:any;  
   allMenu:any[]=[];
   menu:any;
   
@@ -25,13 +27,23 @@ export class MenuComponent implements OnInit {
     console.log(obj);
     this.menu = obj;
   }
-  confDelete(btn:Element){
-    // console.log(btn.eventListeners);
-    // console.log(btn);
-    // btn.nativeElement.click();
+  confDelete(){
+  
     this._menu.delete(this.menu).subscribe((result)=>{
-      console.log(result);
-    
+
+      let n = this.allMenu.indexOf(this.menu);
+      // console.log(n);
+      this.allMenu.splice(n, 1);
+        // console.log(result);
+        this.closeBtn.nativeElement.click();
     })
   }
 }
+/*
+var x = 'pink';
+var arr = ['red', 'green', 'blue', 'yellow', 'pink']
+
+var n = arr.indexOf(x);
+arr.splice(n, 1);
+
+*/
