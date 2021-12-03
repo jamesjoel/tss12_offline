@@ -23,6 +23,9 @@ export class MenuService {
   update(data:any){
     return this._http.put<any>(this.apiUrl+"/"+data._id, data);
   }
+  get(id:any){
+    return this._http.get<any>(this.apiUrl+"/"+id);
+  }
   
   
 

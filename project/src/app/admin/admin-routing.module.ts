@@ -12,6 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
 import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
 import { UsersComponent } from './pages/users/users.component';
+import { UpdateMenuComponent } from './pages/update-menu/update-menu.component';
+import { StudentComponent } from './pages/student/student.component';
 
 
 const routes: Routes = [
@@ -57,6 +59,16 @@ const routes: Routes = [
       {
         path : "users",
         component : UsersComponent,
+        canActivate : [BackdoorGuard]
+      },
+      {
+        path : "update-menu/:id",
+        component : UpdateMenuComponent,
+        canActivate : [BackdoorGuard]
+      },
+      {
+        path : "student",
+        component : StudentComponent,
         canActivate : [BackdoorGuard]
       }
     ]

@@ -16,6 +16,9 @@ import { AddMenuComponent } from './pages/add-menu/add-menu.component';
 import { AddDishComponent } from './pages/add-dish/add-dish.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UsersComponent } from './pages/users/users.component';
+import { UpdateMenuComponent } from './pages/update-menu/update-menu.component';
+import { StudentComponent } from './pages/student/student.component';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { UsersComponent } from './pages/users/users.component';
     AddMenuComponent,
     AddDishComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    UpdateMenuComponent,
+    StudentComponent,
+    DiscountPipe
   ],
   imports: [
     CommonModule,

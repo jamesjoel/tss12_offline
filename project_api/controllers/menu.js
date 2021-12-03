@@ -22,7 +22,7 @@ routes.get("/:id", (req, res) => {
     MongoClient.connect(database.dbUrl, (err, con) => {
         var db = con.db(database.dbName);
         db.collection(collName).find({ _id : id }).toArray((err, result) => {
-            res.send(result);
+            res.send(result[0]);
         })
     })
 })
@@ -40,6 +40,9 @@ routes.post("/", (req, res) => {
 
 
 routes.put("/:id", (req, res) => {
+    console.log(req.body);
+    console.log(req.params.id);
+    delete req.body._id;
     var id = mongodb.ObjectId(req.params.id);
     MongoClient.connect(database.dbUrl, (err, con) => {
         var db = con.db(database.dbName);

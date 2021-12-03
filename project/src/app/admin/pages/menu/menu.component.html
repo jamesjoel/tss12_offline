@@ -17,7 +17,7 @@
                     <tr *ngFor="let m of allMenu; let n = index">
                         <td>{{ n+1 }}</td>
                         <td>{{ m.name }}</td>
-                        <td><a href="#" class="btn btn-sm btn-info">Edit</a></td>
+                        <td><a routerLink="/admin/update-menu/{{ m._id }}" class="btn btn-sm btn-info">Edit</a></td>
                         <td><a data-toggle="modal" data-target="#delModal" href="#" (click)="askDelete(m)" class="btn btn-sm btn-danger">Delete</a></td>
                     </tr>
                 </table>
