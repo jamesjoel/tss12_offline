@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form [formGroup]="teacherForm">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input [ngClass]="{ 'is-invalid' : checkForm && teacherForm.controls.name.errors }" formControlName="name" type="text" class="form-control" />
+                <div class="invalid-feedback" *ngIf="checkForm && teacherForm.controls.name.errors ">
+                    Insert Teacher Name
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Salary</label>
+                <input [ngClass]="{ 'is-invalid' : checkForm && teacherForm.controls.salary.errors }" formControlName="salary" type="text" class="form-control" />
+                <div class="invalid-feedback" *ngIf="checkForm && teacherForm.controls.salary.errors ">
+                    Insert Teacher Salary
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <select formControlName="city" [ngClass]="{ 'is-invalid' : checkForm && teacherForm.controls.city.errors }" class="form-control" >
+                    <option value="">Select</option>
+                    <option value="indore">Indore</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="checkForm && teacherForm.controls.city.errors ">
+                    Select Teacher City
+                </div>
+
+            </div>
+            <br />
+            <Br />
+            <input type="submit" (click)="submit()" value="Submit" class="btn btn-success" />
+            </form>
+        </div>
+    </div>
+</div>
