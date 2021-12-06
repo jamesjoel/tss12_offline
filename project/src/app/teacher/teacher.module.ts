@@ -9,6 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddComponent } from './pages/add/add.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { AboutComponent } from './pages/about/about.component';
+import { Box1Component } from './shared/box1/box1.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { EditComponent } from './pages/edit/edit.component';
     HeaderComponent,
     HomeComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    AboutComponent,
+    Box1Component
   ],
   imports: [
     CommonModule,

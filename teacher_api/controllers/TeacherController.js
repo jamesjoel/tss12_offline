@@ -16,6 +16,7 @@ routes.get("/", (req, res)=>{
 });
 
 routes.post("/",(req, res)=>{
+    delete req.body._id;
     MongoClient.connect(dbUrl, (err, con)=>{
         var db = con.db(dbName);
         db.collection(collName).insertOne(req.body, ()=>{

@@ -4,6 +4,7 @@ import { TeacherComponent } from './teacher.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddComponent } from './pages/add/add.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,12 @@ const routes: Routes = [
         component : AddComponent
       },
       {
-        path : "edit",
-        component : EditComponent
+        path : "edit/:id",
+        component : AddComponent
+      },
+      {
+        path : "about",
+        component : AboutComponent
       }
     ]
   }

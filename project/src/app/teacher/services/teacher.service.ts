@@ -18,8 +18,8 @@ export class TeacherService {
     getAll(){
       return this._http.get<any>(this.apiUrl);
     }
-    get(obj:any){
-      return this._http.get<any>(this.apiUrl+"/"+obj._id);
+    get(id:any){
+      return this._http.get<any>(this.apiUrl+"/"+id);
     }
     save(obj:any){
       return this._http.post<any>(this.apiUrl, obj);
