@@ -20,6 +20,9 @@ import { MyFormComponent } from './pages/my-form/my-form.component';
 import { StudentComponent } from './pages/student/student.component';
 import { BoxComponent } from './shared/box/box.component';
 import { UserInfoComponent } from './shared/user-info/user-info.component';
+import { ServiceComponent } from './pages/service/service.component';
+import { TermsComponent } from './pages/terms/terms.component';
+import { InfoBoxComponent } from './shared/info-box/info-box.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { UserInfoComponent } from './shared/user-info/user-info.component';
     MyFormComponent,
     StudentComponent,
     BoxComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ServiceComponent,
+    TermsComponent,
+    InfoBoxComponent
   ],
   imports: [
     BrowserModule,
