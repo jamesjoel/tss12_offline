@@ -23,6 +23,7 @@ import { UserInfoComponent } from './shared/user-info/user-info.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { InfoBoxComponent } from './shared/info-box/info-box.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { InfoBoxComponent } from './shared/info-box/info-box.component';
     UserInfoComponent,
     ServiceComponent,
     TermsComponent,
-    InfoBoxComponent
+    InfoBoxComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,

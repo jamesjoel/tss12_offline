@@ -5,6 +5,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MyFormComponent } from './pages/my-form/my-form.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { StudentComponent } from './pages/student/student.component';
@@ -51,6 +52,14 @@ const routes: Routes = [
   {
     path : "terms",
     component : TermsComponent
+  },
+  {
+    path : "photos",
+    component : PhotosComponent
+  },
+  {
+    path : "photos/:pageno/:total",
+    component : PhotosComponent
   }
 ];
 
